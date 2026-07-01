@@ -47,7 +47,7 @@ This project is a Streamlit web application that predicts whether a movie review
 
 - Download the dataset from Kaggle:
 
-  Dataset: IMDB Dataset of 50K Movie Reviews
+  Dataset: [IMDB Dataset of 50K Movie Reviews](https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews)
 
 - Place the file below in the project folder:
 
@@ -68,15 +68,3 @@ This project is a Streamlit web application that predicts whether a movie review
   ```
 
 - Open the local URL shown in the terminal and enter a movie review to test the app.
-
-## Submission checklist
-
-Make sure your GitHub repository contains:
-
-- `train_model.py`
-- `app.py`
-- `sentiment_model.pkl`
-- `requirements.txt`
-- `README.md`
-
-The Kaggle CSV file does not need to be committed to GitHub.
