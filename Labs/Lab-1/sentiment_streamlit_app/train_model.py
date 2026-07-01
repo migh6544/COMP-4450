@@ -3,7 +3,7 @@ train_model.py
 
 Train and save a sentiment analysis model for movie reviews.
 
-Assignment context:
+Context:
 - Input data: Kaggle "IMDB Dataset of 50K Movie Reviews"
 - Expected file name: IMDB Dataset.csv
 - Expected columns: review, sentiment
@@ -29,14 +29,12 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import Pipeline
 
 
-# ---------------------------------------------------------------------------
 # Constants
-# ---------------------------------------------------------------------------
 # Keeping file paths as constants makes the script easier to update and debug.
 DATA_FILE: Final[Path] = Path("IMDB Dataset.csv")
 MODEL_FILE: Final[Path] = Path("sentiment_model.pkl")
 
-# The assignment dataset should contain these exact columns.
+# Dataset should contain these exact columns.
 REQUIRED_COLUMNS: Final[set[str]] = {"review", "sentiment"}
 
 # Limit vocabulary size so the saved model is reasonably sized for GitHub.
@@ -44,17 +42,14 @@ REQUIRED_COLUMNS: Final[set[str]] = {"review", "sentiment"}
 MAX_FEATURES: Final[int] = 50_000
 
 
-# ---------------------------------------------------------------------------
 # Data loading and validation
-# ---------------------------------------------------------------------------
 def load_dataset(csv_path: Path) -> pd.DataFrame:
     """Load and validate the IMDB reviews dataset.
 
     Parameters
     ----------
     csv_path:
-        Path to the Kaggle CSV file. The assignment expects this file to be
-        named "IMDB Dataset.csv" and placed in the same directory as this script.
+        Path to the Kaggle CSV file. This file should be named "IMDB Dataset.csv" and placed in the same directory as this script.
 
     Returns
     -------
@@ -84,7 +79,7 @@ def load_dataset(csv_path: Path) -> pd.DataFrame:
             f"Expected columns: {sorted(REQUIRED_COLUMNS)}."
         )
 
-    # Keep only the columns needed by the assignment.
+    # Keep only the columns needed.
     data = data[["review", "sentiment"]].copy()
 
     # Remove rows where either the review text or label is missing.
@@ -107,9 +102,7 @@ def load_dataset(csv_path: Path) -> pd.DataFrame:
     return data
 
 
-# ---------------------------------------------------------------------------
 # Model construction
-# ---------------------------------------------------------------------------
 def build_model_pipeline() -> Pipeline:
     """Create the sentiment analysis model pipeline.
 
