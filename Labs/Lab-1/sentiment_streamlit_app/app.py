@@ -21,23 +21,18 @@ import streamlit as st
 from sklearn.pipeline import Pipeline
 
 
-# ---------------------------------------------------------------------------
 # Constants
-# ---------------------------------------------------------------------------
 MODEL_FILE: Final[Path] = Path("sentiment_model.pkl")
 POSITIVE_LABEL: Final[str] = "positive"
 NEGATIVE_LABEL: Final[str] = "negative"
 
 
-# ---------------------------------------------------------------------------
 # Model loading
-# ---------------------------------------------------------------------------
 @st.cache_data(show_spinner="Loading sentiment model...")
 def load_model(model_path: Path) -> Pipeline:
     """Load the trained sentiment analysis pipeline from disk.
 
-    The assignment specifically asks for @st.cache_data. Caching prevents
-    Streamlit from reloading the model every time the user interacts with the
+    Caching prevents Streamlit from reloading the model every time the user interacts with the
     app, which improves responsiveness.
 
     Parameters
@@ -63,9 +58,7 @@ def load_model(model_path: Path) -> Pipeline:
     return joblib.load(model_path)
 
 
-# ---------------------------------------------------------------------------
 # Prediction helpers
-# ---------------------------------------------------------------------------
 def predict_sentiment(model: Pipeline, text: str) -> tuple[str, pd.DataFrame]:
     """Predict sentiment and class probabilities for one text input.
 
@@ -125,9 +118,7 @@ def display_prediction(predicted_label: str, probability_df: pd.DataFrame) -> No
     st.bar_chart(probability_df)
 
 
-# ---------------------------------------------------------------------------
 # Streamlit page layout
-# ---------------------------------------------------------------------------
 def main() -> None:
     """Build and run the Streamlit user interface."""
     st.set_page_config(
