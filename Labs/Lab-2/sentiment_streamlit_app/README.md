@@ -68,15 +68,3 @@ This project is a Streamlit web application that predicts whether a movie review
   ```
 
 - Open the local URL shown in the terminal and enter a movie review to test the app.
-
-## Submission checklist
-
-Make sure your GitHub repository contains:
-
-- `train_model.py`
-- `app.py`
-- `model.pkl`
-- `requirements.txt`
-- `README.md`
-
-The Kaggle CSV file does not need to be committed to GitHub.
