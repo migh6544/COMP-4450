@@ -1,82 +1,21 @@
 # Movie Review Sentiment Analyzer
 
-This project is a Streamlit web application that predicts whether a movie review is **positive** or **negative**. It trains a TF-IDF + Multinomial Naive Bayes model on the Kaggle IMDB Dataset of 50K Movie Reviews, saves the trained pipeline, and serves it through an interactive web app.
+## Project Description
 
-## Files included
+This project is a Streamlit web application that predicts whether a movie review is positive or negative.
 
-- `train_model.py` — loads the IMDB dataset, trains the model pipeline, and saves `model.pkl`
-- `app.py` — Streamlit app for user input and sentiment prediction
-- `requirements.txt` — Python libraries needed to run the project
-- `.gitignore` — excludes local environment files and the Kaggle CSV dataset
-- `README.md` — setup and run instructions
+The application uses a trained scikit-learn pipeline saved as `model.pkl`. The model combines TF-IDF text vectorization with a Multinomial Naive Bayes classifier trained on the IMDB movie review dataset.
 
-## How to run locally
+The goal of this assignment is to package the Streamlit application into a reproducible Docker container so that it can run consistently across different machines.
 
-- Clone the repository:
+## Project Structure
 
-  ```bash
-  git clone <your-github-repository-url>
-  cd <your-repository-folder>
-  ```
-
-- Create a virtual environment:
-
-  ```bash
-  python -m venv .venv
-  ```
-
-- Activate the virtual environment:
-
-  macOS/Linux:
-
-  ```bash
-  source .venv/bin/activate
-  ```
-
-  Windows:
-
-  ```bash
-  .venv\Scripts\activate
-  ```
-
-- Install dependencies:
-
-  ```bash
-  pip install -r requirements.txt
-  ```
-
-- Download the dataset from Kaggle:
-
-  Dataset: IMDB Dataset of 50K Movie Reviews
-
-- Place the file below in the project folder:
-
-  ```text
-  IMDB Dataset.csv
-  ```
-
-- Train and save the model:
-
-  ```bash
-  python train_model.py
-  ```
-
-- Run the Streamlit app:
-
-  ```bash
-  streamlit run app.py
-  ```
-
-- Open the local URL shown in the terminal and enter a movie review to test the app.
-
-## Submission checklist
-
-Make sure your GitHub repository contains:
-
-- `train_model.py`
-- `app.py`
-- `model.pkl`
-- `requirements.txt`
-- `README.md`
-
-The Kaggle CSV file does not need to be committed to GitHub.
+```text
+.
+├── .gitignore
+├── Dockerfile
+├── Makefile
+├── README.md
+├── app.py
+├── requirements.txt
+└── model.pkl
