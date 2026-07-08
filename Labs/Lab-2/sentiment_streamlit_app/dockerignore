@@ -1,0 +1,23 @@
+.git/
+.gitignore
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+.venv/
+venv/
+env/
+ENV/
+
+.DS_Store
+.localized
+.Rhistory
+.RData
+
+.vscode/
+.idea/
+
+IMDB Dataset.csv
+
+*.log
