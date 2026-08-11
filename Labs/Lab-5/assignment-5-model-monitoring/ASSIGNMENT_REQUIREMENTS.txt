@@ -1,0 +1,17 @@
+Assignment 5 - Model Monitoring
+
+Implemented requirements:
+- FastAPI POST /predict
+- JSON Lines prediction logging at /logs/prediction_logs.json
+- timestamp, request_text, predicted_sentiment, true_sentiment fields
+- Separate Streamlit monitoring service
+- Shared named Docker volume and shared Docker network
+- Data drift via word-length histogram
+- Target/prediction drift via sentiment distribution bar chart
+- Accuracy and positive-class precision from feedback
+- st.error() alert when accuracy < 80%
+- evaluate.py using supplied test.json
+- api/Dockerfile and monitoring/Dockerfile
+- Makefile build/run/clean orchestration
+- README with architecture, curl examples, and evaluation instructions
+- New public GitHub repository still must be created by the student
